@@ -32,7 +32,7 @@ class StockDetailViewController: UIViewController {
             view.backgroundColor = UIColor.init(red: 96/255, green: 209/255, blue: 101/255, alpha: 1)
             thumbsUpDownPic.image = UIImage(named: "thumbsUp")
         } else {
-            view.backgroundColor = .red
+            view.backgroundColor = UIColor.init(red: 242/255, green: 46/255, blue: 46/255, alpha: 1)
             thumbsUpDownPic.image = UIImage(named: "thumbsDown")
         }
     }
