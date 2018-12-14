@@ -18,18 +18,11 @@ struct UserInfo: Codable {
     let email: String
     let dob: String
     let phone: String
-//   let cell: String
-//   let nat: String
-//   let registered: String
-//   let gender: String
-    
     let name: Name
     let location: Location
-//   let id: Id
     let picture: Picture
 }
     struct Name: Codable {
-        let title: String
         let first: String
         let last: String
         
@@ -38,18 +31,16 @@ struct UserInfo: Codable {
         }
     }
     
+    
     struct Location: Codable {
-        let street: String
         let city: String
         let state: String
-        let postcode: String
+        public var fullLocation: String {
+            return "\(city.capitalized), \(state.capitalized)"
+        }
     }
     
-//    struct Id: Codable {
-//        let name: String
-//        let value: String
-//    }
-//    
+   
     struct Picture: Codable {
         let large: URL
         let medium: URL
