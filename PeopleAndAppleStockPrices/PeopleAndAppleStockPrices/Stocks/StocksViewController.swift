@@ -29,7 +29,7 @@ class StocksViewController: UIViewController {
         guard let stockDetailController = segue.destination as? StockDetailViewController,
             let indexPath = stockTableView.indexPathForSelectedRow
             else { fatalError ("no bueno") }
-        let stockSelected = stocks[indexPath.row]
+        let stockSelected = stockInfo[indexPath.row]
         stockDetailController.stock = stockSelected
     }
     

@@ -10,7 +10,7 @@ import UIKit
 
 class StockDetailViewController: UIViewController {
 
-    public var stock: Stock!
+    public var stock: [Stock]!
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var openLabel: UILabel!
@@ -25,10 +25,11 @@ class StockDetailViewController: UIViewController {
     }
     
     func updateStockInfo () {
-        dateLabel.text = stock.date
-        openLabel.text = String(format:"Open: %.2f", stock.open)
-        closeLabel.text = String(format:"Close: %.2f", stock.close)
-        if stock.open < stock.close {
+        let stocks = stock[0]
+        dateLabel.text = stocks.date
+        openLabel.text = String(format:"Open: %.2f", stocks.open)
+        closeLabel.text = String(format:"Close: %.2f", stocks.close)
+        if stocks.open < stocks.close {
             view.backgroundColor = UIColor.init(red: 96/255, green: 209/255, blue: 101/255, alpha: 1)
             thumbsUpDownPic.image = UIImage(named: "thumbsUp")
         } else {
